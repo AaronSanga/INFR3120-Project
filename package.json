@@ -1,11 +1,12 @@
 {
-  "name": "infr3120project",
+  "name": "infrproject",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node server.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "bootstrap": "^5.3.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

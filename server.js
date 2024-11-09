@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('./config/app');
-var debug = require('debug');
+var app = require('./server/config/app');
+var debug = require('debug')('infrproject:server');
 var http = require('http');
 
 /**

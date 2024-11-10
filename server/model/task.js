@@ -3,13 +3,11 @@ let mongoose = require('mongoose')
 // create a model class
 let bookModel = mongoose.Schema({
     Name:String,
-    Author:String,
-    Published:String,
     Description:String,
-    Price:Number
+    Deadline:String
 },
 {
-    collection:"Bio_books"
+    collection:"User_Tasks"
 }
 )
 module.exports = mongoose.model('Book',bookModel)

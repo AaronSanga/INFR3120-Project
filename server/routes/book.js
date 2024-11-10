@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-let Book = require('../model/book')
-let bookController = require('../controllers/book.js')
+let Book = require('../model/task')
+let bookController = require('../controllers/task.js')
 /*Read Operation*/
 router.get('/',async(req,res,next)=>{
     try{
         const BookList = await Book.find();
         res.render('Book/list',{
-            title:'Books',
+            title:'Tasks',
             BookList:BookList
         })
     }
@@ -21,7 +21,7 @@ router.get('/',async(req,res,next)=>{
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Book/add',{
-            title: 'Add Book'
+            title: 'Add Task'
         })
     }
     catch(err){
@@ -56,7 +56,7 @@ router.get('/edit/:id',async(req,res,next)=>{
         const id = req.params.id;
         const bookToEdit=await Book.findById(id);
         res.render('Book/edit',{
-            title: 'Edit Book',
+            title: 'Edit Task',
             Book:bookToEdit
         })
     }

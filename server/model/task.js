@@ -1,7 +1,7 @@
 // MVC --> Model , View , Controller (Routers)
 let mongoose = require('mongoose')
 // create a model class
-let bookModel = mongoose.Schema({
+let taskModel = mongoose.Schema({
     Name:String,
     Description:String,
     Deadline:String
@@ -10,4 +10,4 @@ let bookModel = mongoose.Schema({
     collection:"User_Tasks"
 }
 )
-module.exports = mongoose.model('Book',bookModel)
+module.exports = mongoose.model('Task',taskModel)

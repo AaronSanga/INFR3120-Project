@@ -1,7 +1,18 @@
 
 
+*{
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 img{
 
     height: 103px; 
     width: 102px; 
 }
+
+#home p, h1{
+
+    text-align: center;
+}
+

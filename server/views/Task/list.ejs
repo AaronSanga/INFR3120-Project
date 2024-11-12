@@ -5,7 +5,7 @@
         <div class="offset-md-1 col-md-10">
             <h1><%= title %></h1>
             <br>
-            <a href="/tasklist/add" class="btn btn-primary" role="button"> Add Task
+            <a href="/add" class="btn btn-primary" role="button"> Add Task
             </a>
         <table class="table table-bordered table-striped table-hover">
             <!--Table Header-->
@@ -19,8 +19,8 @@
                 <td class="text-center col-2"><%= TaskList[count].Name %></td>
                 <td class="col-5"><%= TaskList[count].Description %></td>
                 <td class="text-center col-2"><%= TaskList[count].Deadline %></td>
-                <td class="text-center col-1"><a href="/tasklist/edit/<%= TaskList[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i>Edit</a></td>
-                <td class="text-center col-1"><a href="/tasklist/delete/<%= TaskList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</a></td>
+                <td class="text-center col-1"><a href="/edit/<%= TaskList[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                <td class="text-center col-1"><a href="/delete/<%= TaskList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</a></td>
             </tr>
             <% } %>
         </table>

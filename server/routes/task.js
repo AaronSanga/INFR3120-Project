@@ -1,20 +1,51 @@
 var express = require('express');
 var router = express.Router();
-let Task = require('../model/task')
-let taskController = require('../controllers/task.js')
-/*Read Operation*/
-router.get('/',async(req,res,next)=>{
-    try{
+let Task = require('../model/task');
+
+router.get('/', async (req, res, next) => {
+    try {
         const TaskList = await Task.find();
-        res.render('Task/list',{
-            title:'Tasks',
-            TaskList:TaskList
-        })
+        res.render('index', {
+            title: 'Home',
+            TaskList: TaskList
+        });
+    } catch (err) {
+        console.error(err);
+        res.render('index', {
+            error: 'Error on Server',
+            TaskList: []
+        });
     }
-    catch(err){
-        console.error(err)
-        res.render('Task/list',{
-            error:'Error on Server'})
+});
+
+router.get('/home', async (req, res, next) => {
+    try {
+        const TaskList = await Task.find();
+        res.render('index', {
+            title: 'Home',
+            TaskList: TaskList
+        });
+    } catch (err) {
+        console.error(err);
+        res.render('index', {
+            error: 'Error on Server',
+            TaskList: []
+        });
+    }
+});
+
+router.get('/tasklist', async (req, res, next) => {
+    try {
+        const TaskList = await Task.find();
+        res.render('Task/list', {
+            title: 'Tasks',
+            TaskList: TaskList
+        });
+    } catch (err) {
+        console.error(err);
+        res.render('Task/list', {
+            error: 'Error on Server'
+        });
     }
 });
 /*Create Operation */

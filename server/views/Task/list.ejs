@@ -10,24 +10,30 @@
             <% } %>
         <table class="table table-bordered table-striped table-hover">
             <!--Table Header-->
-            <tr class="d-flex">
-                <th class="text-center col-2">Name</th>
-                <th class="col-5">Description</th>
-                <th class="text-center col-2">Deadline</th>
-            </tr>
-            <% if(typeof displayName=='string' && displayName) { %>
-            <% for(let count=0;count<TaskList.length;count++) { %>
-            <tr class="d-flex">
-                <td class="text-center col-2"><%= TaskList[count].Name %></td>
-                <td class="col-5"><%= TaskList[count].Description %></td>
-                <td class="text-center col-2"><%= TaskList[count].Deadline %></td>
-                <% if(typeof displayName=='string' && displayName) { %>
-                <td class="text-center col-1"><a href="/edit/<%= TaskList[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
-                <td class="text-center col-1"><a href="/delete/<%= TaskList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a></td>
+            <% if (typeof displayName=='string' && displayName) { %>
+                <tr class="d-flex">
+                    <th class="text-center col-2">Name</th>
+                    <th class="col-5">Description</th>
+                    <th class="text-center col-2">Deadline</th>
+                </tr>
+                <% for(let count=0;count<TaskList.length;count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= TaskList[count].Name %></td>
+                        <td class="col-5"><%= TaskList[count].Description %></td>
+                        <td class="text-center col-2"><%= TaskList[count].Deadline %></td>
+                        <% if(typeof displayName=='string' && displayName) { %>
+                        <td class="text-center col-1"><a href="/edit/<%= TaskList[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
+                        <td class="text-center col-1"><a href="/delete/<%= TaskList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a></td>
+                        <% } %>
+                    </tr>
                 <% } %>
-            </tr>
-            <% } %>
-            <% } %>
+              <% } else { %>
+                <tr class="d-flex">
+                    <th class="text-center col-3">Name</th>
+                    <th class="col-6">Description</th>
+                    <th class="text-center col-3">Deadline</th>
+                  </tr>
+              <% } %>
         </table>
         </div>
     </div>

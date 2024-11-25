@@ -22,7 +22,7 @@
           <th class="col-6">Description</th>
           <th class="text-center col-3">Deadline</th>
         </tr>
-        <% if (TaskList && TaskList.length > 0) { %>
+        <% if (typeof displayName=='string' && displayName) { %>
           <% for (let count = 0; count < TaskList.length; count++) { %>
             <tr class="d-flex">
               <td class="text-center col-3"><%= TaskList[count].Name %></td>
@@ -35,6 +35,9 @@
             <td colspan="3" class="text-center">No tasks to show.</td>
           </tr>
         <% } %>
+
+
+
       </table>
     </div>
   </div>

@@ -3,6 +3,7 @@
 *{
 
     font-family: Arial, Helvetica, sans-serif;
+    color: darkgreen;
 }
 
 img{
@@ -18,5 +19,12 @@ img{
 
 p{
     text-align: center;
+}
+
+.fas-fa-sign-out i{
+
+    color:red
+
+
 }
 

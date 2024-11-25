@@ -15,22 +15,28 @@
   </p>
   <div class="row">
     <div class="offset-md-1 col-md-10">
-        <table class="table table-bordered table-striped table-hover">
-            <!--Table Header-->
+      <table class="table table-bordered table-striped table-hover">
+        <!--Table Header-->
+        <tr class="d-flex">
+          <th class="text-center col-3">Name</th>
+          <th class="col-6">Description</th>
+          <th class="text-center col-3">Deadline</th>
+        </tr>
+        <% if (TaskList && TaskList.length > 0) { %>
+          <% for (let count = 0; count < TaskList.length; count++) { %>
             <tr class="d-flex">
-                <th class="text-center col-3">Name</th>
-                <th class="col-6">Description</th>
-                <th class="text-center col-3">Deadline</th>
+              <td class="text-center col-3"><%= TaskList[count].Name %></td>
+              <td class="col-6"><%= TaskList[count].Description %></td>
+              <td class="text-center col-3"><%= TaskList[count].Deadline %></td>
             </tr>
-            <% for(let count = 0; count < TaskList.length; count++) { %>
-            <tr class="d-flex">
-                <td class="text-center col-3"><%= TaskList[count].Name %></td>
-                <td class="col-6"><%= TaskList[count].Description %></td>
-                <td class="text-center col-3"><%= TaskList[count].Deadline %></td>
-            </tr>
-            <% } %>
-        </table>
-      </div>
+          <% } %>
+        <% } else { %>
+          <tr>
+            <td colspan="3" class="text-center">No tasks to show.</td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
   </div>
-</main> 
+</main>
 <%- include Partials/footer.ejs %>

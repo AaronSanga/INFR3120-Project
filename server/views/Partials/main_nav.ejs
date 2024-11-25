@@ -8,20 +8,40 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <% if(title=="Home") { %>
-                <a class="nav-link active" href="/home">
-             <% } else { %>     
-              <a class="nav-link" href="/home">
-            <% } %>
-              <i class="fa-solid fa-house-chimney"></i> Home</a>
-
+              <% if(title=="Home") { %>
+                  <a class="nav-link active" href="/home">
+              <% } else { %>     
+                <a class="nav-link" href="/home">
+              <% } %>
+                <i class="fa-solid fa-house-chimney"></i> Home</a>
+          </li>
           <li class="nav-item">
-            <% if(title=="Books") { %>
+              <% if(title=="Tasks") { %>
                 <a class="nav-link active" href="/tasklist">
-             <% } else { %>     
+            <% } else { %>     
               <a class="nav-link" href="/tasklist">
             <% } %>
               <i class="fa-solid fa-list-check"></i> My Tasks</a>
+          </li>
+          <% if(typeof displayName=='string' && displayName) { %>
+            <li class="navbar-text">
+              <i class="fas fa-lg fa-user"></i>
+              Welcome, <%= displayName %>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link">
+                <i class="fas fa-sign-out"></i>
+                Logout
+              </a>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <a href="/login" class="nav-link">
+                <i class="fas fa-lg fa-sign-in"></i>
+                Login
+              </a>
+            </li>
+            <% } %>
         </ul>
       </div>
     </div>

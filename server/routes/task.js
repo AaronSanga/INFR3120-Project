@@ -1,12 +1,22 @@
 var express = require('express');
 var router = express.Router();
 let Task = require('../model/task');
+let taskController = require('../controllers/task.js')
+function requireAuth(req,res,next)
+{
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 router.get('/', async (req, res, next) => {
     try {
         const TaskList = await Task.find();
         res.render('index', {
             title: 'Home',
+            displayName: req.user?req.user.displayName:'',
             TaskList: TaskList
         });
     } catch (err) {
@@ -23,6 +33,7 @@ router.get('/home', async (req, res, next) => {
         const TaskList = await Task.find();
         res.render('index', {
             title: 'Home',
+            displayName: req.user?req.user.displayName:'',
             TaskList: TaskList
         });
     } catch (err) {
@@ -39,6 +50,7 @@ router.get('/tasklist', async (req, res, next) => {
         const TaskList = await Task.find();
         res.render('Task/list', {
             title: 'Tasks',
+            displayName: req.user?req.user.displayName:'',
             TaskList: TaskList
         });
     } catch (err) {
@@ -52,7 +64,8 @@ router.get('/tasklist', async (req, res, next) => {
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Task/add',{
-            title: 'Add Task'
+            title: 'Add Task',
+            displayName: req.user?req.user.displayName:''
         })
     }
     catch(err){
@@ -86,6 +99,7 @@ router.get('/edit/:id',async(req,res,next)=>{
         const TaskToEdit=await Task.findById(id);
         res.render('Task/edit',{
             title: 'Edit Task',
+            displayName: req.user?req.user.displayName:'',
             Task:TaskToEdit
         })
     }

@@ -13,13 +13,13 @@
             <% if (typeof displayName=='string' && displayName) { %>
                 <tr class="d-flex">
                     <th class="text-center col-2">Name</th>
-                    <th class="col-5">Description</th>
+                    <th class="col-6">Description</th>
                     <th class="text-center col-2">Deadline</th>
                 </tr>
                 <% for(let count=0;count<TaskList.length;count++) { %>
                     <tr class="d-flex">
                         <td class="text-center col-2"><%= TaskList[count].Name %></td>
-                        <td class="col-5"><%= TaskList[count].Description %></td>
+                        <td class="col-6"><%= TaskList[count].Description %></td>
                         <td class="text-center col-2"><%= TaskList[count].Deadline %></td>
                         <% if(typeof displayName=='string' && displayName) { %>
                         <td class="text-center col-1"><a href="/edit/<%= TaskList[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
@@ -32,6 +32,9 @@
                     <th class="text-center col-3">Name</th>
                     <th class="col-6">Description</th>
                     <th class="text-center col-3">Deadline</th>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-center">Login/Sign-up to see, edit and create new tasks.</td>
                   </tr>
               <% } %>
         </table>

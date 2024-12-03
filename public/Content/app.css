@@ -7,6 +7,7 @@
 }
 .navbar {
     background-color: #105325;
+    height: 5rem;
 }
   
   .navbar .nav-link {
@@ -20,6 +21,11 @@
     color: #ffffff; 
     font-weight: normal; 
   }
+
+  .fas {
+    color: rgb(40, 169, 40);
+}
+
   
 
 img{

@@ -96,3 +96,52 @@ h1 {
   }
   
 
+  .container {
+    margin-top: 50px; 
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px; 
+  }
+  
+ 
+  .form-group {
+    margin-bottom: 1.5rem; 
+  }
+  
+  input.form-control,
+  textarea.form-control {
+    border-radius: 5px; 
+    padding: 10px; 
+    font-size: 1rem; 
+  }
+  
+  textarea.form-control {
+    resize: vertical; 
+    min-height: 100px; 
+  }
+  
+  
+  button {
+    font-size: 1rem; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+  }
+  
+  .btn-primary:hover,
+  .btn-warning:hover {
+    opacity: 0.8; 
+  }
+  
